@@ -1,0 +1,72 @@
+* {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+}
+
+body {
+   height: 100vh;
+   background-color: black;
+}
+
+#scoreboard {
+   width: 60vw;
+   display: flex;
+   margin: 100px auto;
+   justify-content: space-around;
+}
+
+#heading {
+   color: #fff;
+}
+
+#score {
+   color: #fff;
+}
+
+#bestScore {
+   color: #fff;
+}
+
+p {
+   color: #fff;
+   text-align: center;
+}
+
+#game {
+   width: 60vw;
+   height: 50vh;
+   display: flex;
+   flex-wrap: wrap;
+   margin: auto;
+   border: 5px solid rgb(255, 255, 255);
+}
+
+#game div {
+   width: calc(25% - 10px);
+   border: 2px solid black;
+   border-radius: 5px;
+   margin: 5px;
+   background-color: rgb(155, 155, 155);
+   transform: scale(1);
+}
+
+#gameOver {
+   text-align: center;
+   color: #fff;
+   margin-top: 100px;
+}
+
+#game div.flip {
+   transform: rotateY(180deg);
+}
+
+#game div:hover {
+   box-shadow: inset 0px 0px 0px 2px #fff;
+   cursor: pointer;
+}
+
+#game div:active {
+   transform: scale(.97);
+   transition: transform .2s;
+}
