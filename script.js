@@ -2,6 +2,7 @@ const gameContainer = document.getElementById("game");
 const cards = document.querySelectorAll("#game div");
 const score = document.querySelector("#score span");
 const gameOver = document.querySelector("#gameOver span");
+const resetBtn = document.querySelector(".resetBtn");
 let myBestScore = document.querySelector("#bestScore span");
 let cardsClicked = 0;
 let cardsFlipped = 0;
@@ -27,6 +28,7 @@ const COLORS = [
   "orchid",
   "teal"
 ];
+
 
 let newHiScore = localStorage.getItem("scoreToBeat");
 
@@ -65,14 +67,8 @@ function createDivsForColors(colorArray) {
 
 
 function handleCardClick(e) {
-  if(lockBoard) {
-     return;
-  }
-  
-  if(this.classList.contains("flipped")) {
-
-   return;
-  }
+  if(lockBoard) return;
+  if(this.classList.contains("flipped")) return;
    
   this.style.backgroundColor = this.classList[0];
   
@@ -105,6 +101,8 @@ function handleCardClick(e) {
        lockBoard = false;
      }, 1000);
    }
+
+   
 }
 
    function playSound() {
@@ -113,14 +111,15 @@ function handleCardClick(e) {
 
    if(cardsFlipped === 16) {
       gameOver.innerText = "You finished with a score of: " + cardsClicked;
-      
       if(cardsClicked < parseInt(newHiScore)) {
          gameOver.innerText = "A NEW HI SCORE!!";
          localStorage.setItem("scoreToBeat", cardsClicked);
          playSound();
-      }
-      
+      }  
    }
+
+   
+      
 }
 
 createDivsForColors(shuffledColors);

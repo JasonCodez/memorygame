@@ -57,10 +57,6 @@ p {
    margin-top: 100px;
 }
 
-#game div.flip {
-   transform: rotateY(180deg);
-}
-
 #game div:hover {
    box-shadow: inset 0px 0px 0px 2px #fff;
    cursor: pointer;
@@ -68,5 +64,5 @@ p {
 
 #game div:active {
    transform: scale(.97);
-   transition: transform .2s;
+   transition: transform ease-in-out .1s;
 }
