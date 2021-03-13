@@ -112,7 +112,7 @@ function handleCardClick(e) {
    }
 
    if (cardsFlipped === 16) {
-      gameOver.innerText = "You finished with a score of: " + cardsClicked + " \nYou didn't beat the High Score this time " + "\nbut refresh the page and give it another go!!";
+      gameOver.innerText = "You finished with a score of: " + cardsClicked + " \nRefresh the page and try again! ";
       if (cardsClicked < parseInt(newHiScore) || newHiScore === null) {
          gameOver.innerText = "A NEW HI SCORE!!";
          localStorage.setItem("scoreToBeat", cardsClicked);
