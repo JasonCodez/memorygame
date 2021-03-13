@@ -47,11 +47,16 @@ body {
    margin-bottom: 50px;
 }
 
-#info-header {
+#info-top {
    color: rgb(0, 183, 255);
    font-family: 'Ranchers', cursive;
    font-size: 50px;
    letter-spacing: .5em;
+}
+
+#info-bottom {
+   color: #fff;
+   margin-top: 20px;
 }
 
 p {
